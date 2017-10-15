@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>SNAJIN</title>
+  <title>WordGuo</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-14T08:21:40.887Z</updated>
+  <updated>2017-10-15T12:23:12.378Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>WordGuo</name>
+    <name>郭三金</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>article title</title>
-    <link href="http://yoursite.com/2017/10/14/article-title/"/>
-    <id>http://yoursite.com/2017/10/14/article-title/</id>
-    <published>2017-10-14T08:21:40.000Z</published>
-    <updated>2017-10-14T08:21:40.887Z</updated>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/10/15/Hello-World/"/>
+    <id>http://yoursite.com/2017/10/15/Hello-World/</id>
+    <published>2017-10-15T12:03:04.000Z</published>
+    <updated>2017-10-15T12:23:12.378Z</updated>
+    
+    <content type="html"><![CDATA[<center>This is my first blog</center><br><center>Helle World!</center><br><center>My Name is GuoXin.</center>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;center&gt;This is my first blog&lt;/center&gt;&lt;br&gt;&lt;center&gt;Helle World!&lt;/center&gt;&lt;br&gt;&lt;center&gt;My Name is GuoXin.&lt;/center&gt;
+      
+    
     </summary>
     
+    
+      <category term="tags" scheme="http://yoursite.com/tags/tags/"/>
     
   </entry>
   
