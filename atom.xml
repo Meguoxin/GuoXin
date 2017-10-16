@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-15T12:23:12.378Z</updated>
+  <updated>2017-10-16T00:43:24.406Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://yoursite.com/2017/10/15/Hello-World/"/>
     <id>http://yoursite.com/2017/10/15/Hello-World/</id>
     <published>2017-10-15T12:03:04.000Z</published>
-    <updated>2017-10-15T12:23:12.378Z</updated>
+    <updated>2017-10-16T00:43:24.406Z</updated>
     
-    <content type="html"><![CDATA[<center>This is my first blog</center><br><center>Helle World!</center><br><center>My Name is GuoXin.</center>]]></content>
+    <content type="html"><![CDATA[<center>This is my first blog</center><br><center>Helle World!</center><br><a id="more"></a><br><center>My Name is GuoXin.</center>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;center&gt;This is my first blog&lt;/center&gt;&lt;br&gt;&lt;center&gt;Helle World!&lt;/center&gt;&lt;br&gt;&lt;center&gt;My Name is GuoXin.&lt;/center&gt;
-      
+      &lt;center&gt;This is my first blog&lt;/center&gt;&lt;br&gt;&lt;center&gt;Helle World!&lt;/center&gt;&lt;br&gt;
     
     </summary>
     
