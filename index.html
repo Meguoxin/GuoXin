@@ -359,8 +359,7 @@
       
         
           <!-- toc -->
-<h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main</p>
-<p>memory。多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable<br>
+<h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/16/Java-Thread/#more" rel="contents">

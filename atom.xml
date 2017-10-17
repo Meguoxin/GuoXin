@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T13:30:12.690Z</updated>
+  <updated>2017-10-17T00:35:00.036Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,22 +21,21 @@
     <link href="http://yoursite.com/2017/10/16/Java-Thread/"/>
     <id>http://yoursite.com/2017/10/16/Java-Thread/</id>
     <published>2017-10-16T13:15:56.000Z</published>
-    <updated>2017-10-16T13:30:12.690Z</updated>
+    <updated>2017-10-17T00:35:00.036Z</updated>
     
-    <content type="html"><![CDATA[<!-- toc --><h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main</p><p>memory。多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable<br><a id="more"></a><br>也可以其他你认为合适的object比如method，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完load到workingmemory －&gt; use&amp;assign －&gt; store到mainmemory的过程，才会释放它得到的锁。这样就实现了所谓的线程安全。什么是线程安全?线程安全是怎么完成的(原理)? 线程安全就是说多线程访问同一代码，不会产生不确定的结果。编写线程安全的代码是低依靠线程同步。<br><!-- toc --></p><h3 id="二-JAVA-相关的集合"><a href="#二-JAVA-相关的集合" class="headerlink" title="二. JAVA 相关的集合"></a>二. JAVA 相关的集合</h3><p>Vector、ArrayList、LinkedList<br>Vector和ArrayList在使用上非常相似,都可用来表示一组数量可变的对象应用的集合,并且可以随机地访问其中的元素。<br>Vector的方法都是同步的(Synchronized),是线程安全的(thread-safe)，而ArrayList的方法不是，由于线程的同步必然要影响性能，因此,ArrayList的性能比Vector好。</p><font size="3" style="font-weight: bold;">ArrayList和LinkedList区别</font><p>对于处理一列数据项,Java提供了两个类ArrayList和LinkedList,ArrayList的内部实现是基于内部数组Object[],所以从概念上讲,它更象数组，但LinkedList的内部实现是基于一组连接的记录,所以,它更象一个链表结构，所以,它们在性能上有很大的差别。<br>从上面的分析可知,在ArrayList的前面或中间插入数据时,你必须将其后的所有数据相应的后移,这样必然要花费较多时间，所以,当你的操作是在一列数据的后面添加数据而不是在前面或中间,并且需要随机地访问其中的元素时,使用ArrayList会提供比较好的性能而访问链表中的某个元素时,就必须从链表的一端开始沿着连接方向一个一个元素地去查找,直到找到所需的元素为止，所以,当你的操作是在一列数据的前面或中间添加或删除数据,并且按照顺序访问其中的元素时,就应该使用LinkedList了。如果在编程中,1，2两种情形交替出现,这时,你可以考虑使用List这样的通用接口,而不用关心具体的实现，在具体的情形下,它的性能由具体的实现来保证。</p><font size="4" style="font-weight: bold;">TreeSet,TreeMap</font><br><font size="3" style="font-weight: bold;">TreeSet：</font><p>1、TreeSet基于TreeMap实现，支持排序。</p><p>2、TreeSet是非线程安全的。<br>从对HashSet和TreeSet的描述来看，TreeSet和HashSet一样，也是完全基于Map来实现的，并且都不支持get(int)来获取指定位置的元素（需要遍历获取），另外TreeSet还提供了一些排序方面的支持。例如传入Comparator实现、descendingSet以及descendingIterator等。</p><p><font size="3" style="font-weight: bold;">TreeMap：</font><br>1、TreeMap是一个典型的基于红黑树的Map实现，因此它要求一定要有Key比较的方法，要么传入Comparator实现，要么key对象实现Comparable接口。<br>2、TreeMap是非线程安全的。</p>]]></content>
+    <content type="html"><![CDATA[<!-- toc --><h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main<br><a id="more"></a><br>memory。多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable</p><p>也可以其他你认为合适的object比如method，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完load到workingmemory －&gt; use&amp;assign －&gt; store到mainmemory的过程，才会释放它得到的锁。这样就实现了所谓的线程安全。什么是线程安全?线程安全是怎么完成的(原理)? 线程安全就是说多线程访问同一代码，不会产生不确定的结果。编写线程安全的代码是低依靠线程同步。<br><!-- toc --></p><h3 id="二-JAVA-相关的集合"><a href="#二-JAVA-相关的集合" class="headerlink" title="二. JAVA 相关的集合"></a>二. JAVA 相关的集合</h3><p>Vector、ArrayList、LinkedList<br>Vector和ArrayList在使用上非常相似,都可用来表示一组数量可变的对象应用的集合,并且可以随机地访问其中的元素。<br>Vector的方法都是同步的(Synchronized),是线程安全的(thread-safe)，而ArrayList的方法不是，由于线程的同步必然要影响性能，因此,ArrayList的性能比Vector好。</p><font size="3" style="font-weight: bold;">ArrayList和LinkedList区别</font><p>对于处理一列数据项,Java提供了两个类ArrayList和LinkedList,ArrayList的内部实现是基于内部数组Object[],所以从概念上讲,它更象数组，但LinkedList的内部实现是基于一组连接的记录,所以,它更象一个链表结构，所以,它们在性能上有很大的差别。<br>从上面的分析可知,在ArrayList的前面或中间插入数据时,你必须将其后的所有数据相应的后移,这样必然要花费较多时间，所以,当你的操作是在一列数据的后面添加数据而不是在前面或中间,并且需要随机地访问其中的元素时,使用ArrayList会提供比较好的性能而访问链表中的某个元素时,就必须从链表的一端开始沿着连接方向一个一个元素地去查找,直到找到所需的元素为止，所以,当你的操作是在一列数据的前面或中间添加或删除数据,并且按照顺序访问其中的元素时,就应该使用LinkedList了。如果在编程中,1，2两种情形交替出现,这时,你可以考虑使用List这样的通用接口,而不用关心具体的实现，在具体的情形下,它的性能由具体的实现来保证。</p><font size="4" style="font-weight: bold;">TreeSet,TreeMap</font><br><font size="3" style="font-weight: bold;">TreeSet：</font><p>1、TreeSet基于TreeMap实现，支持排序。</p><p>2、TreeSet是非线程安全的。<br>从对HashSet和TreeSet的描述来看，TreeSet和HashSet一样，也是完全基于Map来实现的，并且都不支持get(int)来获取指定位置的元素（需要遍历获取），另外TreeSet还提供了一些排序方面的支持。例如传入Comparator实现、descendingSet以及descendingIterator等。</p><p><font size="3" style="font-weight: bold;">TreeMap：</font><br>1、TreeMap是一个典型的基于红黑树的Map实现，因此它要求一定要有Key比较的方法，要么传入Comparator实现，要么key对象实现Comparable接口。<br>2、TreeMap是非线程安全的。</p>]]></content>
     
     <summary type="html">
     
       &lt;!-- toc --&gt;
-&lt;h3 id=&quot;一-线程安全&quot;&gt;&lt;a href=&quot;#一-线程安全&quot; class=&quot;headerlink&quot; title=&quot;一. 线程安全&quot;&gt;&lt;/a&gt;一. 线程安全&lt;/h3&gt;&lt;p&gt;首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main&lt;/p&gt;
-&lt;p&gt;memory。多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable&lt;br&gt;
+&lt;h3 id=&quot;一-线程安全&quot;&gt;&lt;a href=&quot;#一-线程安全&quot; class=&quot;headerlink&quot; title=&quot;一. 线程安全&quot;&gt;&lt;/a&gt;一. 线程安全&lt;/h3&gt;&lt;p&gt;首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main&lt;br&gt;
     
     </summary>
     
       <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
     
     
-      <category term="Java-Thread" scheme="http://yoursite.com/tags/Java-Thread/"/>
+      <category term="Java-Thread-theory" scheme="http://yoursite.com/tags/Java-Thread-theory/"/>
     
   </entry>
   
