@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main">
+<meta name="description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入mainmemory。">
 <meta name="keywords" content="Java-Thread-theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA 的各种集合的线线程">
 <meta property="og:url" content="http://yoursite.com/2017/10/16/Java-Thread/index.html">
 <meta property="og:site_name" content="WordGuo">
-<meta property="og:description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main">
+<meta property="og:description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入mainmemory。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-17T00:35:00.036Z">
+<meta property="og:updated_time" content="2017-10-17T07:24:21.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA 的各种集合的线线程">
-<meta name="twitter:description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main">
+<meta name="twitter:description" content="一. 线程安全首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入mainmemory。">
 
 
 
@@ -362,8 +362,7 @@
 
       
         <!-- toc -->
-<h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入main<br><a id="more"></a><br>memory。多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable</p>
-<p>也可以其他你认为合适的object比如method，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完load到workingmemory －&gt; use&amp;assign －&gt; store到mainmemory的过程，才会释放它得到的锁。这样就实现了所谓的线程安全。什么是线程安全?线程安全是怎么完成的(原理)? 线程安全就是说多线程访问同一代码，不会产生不确定的结果。编写线程安全的代码是低依靠线程同步。<br><!-- toc --></p>
+<h3 id="一-线程安全"><a href="#一-线程安全" class="headerlink" title="一. 线程安全"></a>一. 线程安全</h3><p>首先要明白线程的工作原理，jvm有一个main memory，而每个线程有自己的working memory一个线程对一个variable进行操作时，都要在自己的workingmemory里面建立一个copy，操作完之后再写入mainmemory。<a id="more"></a>多个线程同时操作同一个variable，就可能会出现不可预知的结果。根据上面的解释，很容易想出相应的scenario。而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable也可以其他你认为合适的object比如method，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完load到workingmemory －&gt; use&amp;assign －&gt; store到mainmemory的过程，才会释放它得到的锁。这样就实现了所谓的线程安全。什么是线程安全?线程安全是怎么完成的(原理)? 线程安全就是说多线程访问同一代码，不会产生不确定的结果。编写线程安全的代码是低依靠线程同步。<br><!-- toc --></p>
 <h3 id="二-JAVA-相关的集合"><a href="#二-JAVA-相关的集合" class="headerlink" title="二. JAVA 相关的集合"></a>二. JAVA 相关的集合</h3><p>Vector、ArrayList、LinkedList<br>Vector和ArrayList在使用上非常相似,都可用来表示一组数量可变的对象应用的集合,并且可以随机地访问其中的元素。<br>Vector的方法都是同步的(Synchronized),是线程安全的(thread-safe)，而ArrayList的方法不是，由于线程的同步必然要影响性能，因此,ArrayList的性能比Vector好。</p>
 <font size="3" style="font-weight: bold;">ArrayList和LinkedList区别</font>
 
